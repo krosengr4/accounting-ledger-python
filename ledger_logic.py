@@ -53,7 +53,7 @@ def display_deposits():
             new_transaction = Transaction(line_parts[0], line_parts[1], line_parts[2], line_parts[3], amount)
             new_transaction.print_data();
 
-    input('Press enter to continue...')
+    input('\nPress enter to continue...')
 
 
 
