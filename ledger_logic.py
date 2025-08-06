@@ -36,6 +36,8 @@ def display_all():
 
         new_transaction = Transaction(date, time, description, vendor, amount)
         new_transaction.print_data()
+        
+    input('Press enter to continue')
 
 def display_deposits():
     print('deposits') 

@@ -24,7 +24,6 @@ def process_home_screen():
                 print('Please enter a valid option!!!')
 
 
-
 def add_deposit():
     trans_date = datetime.now().date()
     trans_time = datetime.now().time()
@@ -36,6 +35,8 @@ def add_deposit():
     file_manager.write_to_file(new_transaction)
     print('___________________________________________________')
     new_transaction.print_data()
+    
+    input('Press enter to continue')
 
 
 def add_payment():
@@ -51,3 +52,5 @@ def add_payment():
     file_manager.write_to_file(new_transaction)
     print('___________________________________________________')
     new_transaction.print_data()
+
+    input('Press enter to continue')
