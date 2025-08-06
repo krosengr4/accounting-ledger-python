@@ -40,7 +40,22 @@ def display_all():
     input('Press enter to continue')
 
 def display_deposits():
-    print('deposits') 
+    transactions = file_manager.read_file()
+
+    for line in transactions:
+        if 'DATE' in line:
+            continue
+
+        line_parts = line.split('|')
+        amount = float(line_parts[4])
+
+        if amount > 0:
+            new_transaction = Transaction(line_parts[0], line_parts[1], line_parts[2], line_parts[3], amount)
+            new_transaction.print_data();
+
+    input('Press enter to continue...')
+
+
 
 def display_payments():
     print('payments')
