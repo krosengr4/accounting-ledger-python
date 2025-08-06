@@ -11,7 +11,7 @@ def write_to_file(transaction):
 
     try:
         with open(file_path, 'a') as file:
-            file.write('\n' + date + '|' + time + '|' + description + '|' + vendor + '|' + amount)
+            file.write('\n' + str(date) + '|' + str(time) + '|' + description + '|' + vendor + '|' + str(amount))
 
         print("The transaction was logged to the file!!!")
     
