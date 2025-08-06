@@ -1,4 +1,4 @@
-import user_interface, ledger_logic, reports_logic
+import user_interface, ledger_logic, reports_logic, file_manager
 from datetime import datetime
 from transaction import Transaction
 
@@ -34,6 +34,7 @@ def add_deposit():
 
     new_transaction = Transaction(trans_date, trans_time, description, vendor, amount)
     new_transaction.print_data()
+    file_manager.write_to_file(new_transaction)
 
 
 def add_payment():
