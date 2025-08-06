@@ -17,4 +17,13 @@ def write_to_file(transaction):
     
     except FileNotFoundError as err:
         print("The file was not found! :( )")
+
+def read_file():
+    try:
+        with open(file_path) as file:
+           result = file.readlines()
+           return result
+
+    except FileNotFoundError as err:
+        print('The file was not found...') 
     
