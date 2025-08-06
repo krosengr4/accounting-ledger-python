@@ -1,4 +1,6 @@
 import user_interface, ledger_logic, reports_logic
+from datetime import datetime
+from transaction import Transaction
 
 def process_home_screen():
     if_continue = True
@@ -24,7 +26,15 @@ def process_home_screen():
 
 
 def add_deposit():
-    print('Add a deposit');
+    trans_date = datetime.now().date()
+    trans_time = datetime.now().time()
+    description = input('\nEnter the description:\n')
+    vendor = input('Enter the vendor:\n')
+    amount = float(input('Enter the amount:\n'))
+
+    new_transaction = Transaction(trans_date, trans_time, description, vendor, amount)
+    new_transaction.print_data()
+
 
 def add_payment():
     print('Add payment')

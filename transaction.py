@@ -11,5 +11,5 @@ class Transaction:
         print('Date:', self.date)
         print('Time:', self.time)
         print('Description:', self.description)
-        print('Vendor', self.vendor)
-        print(f'Amount ${self.amount}:,.2f')
+        print('Vendor:', self.vendor)
+        print(f'Amount: ${self.amount:,.2f}')
