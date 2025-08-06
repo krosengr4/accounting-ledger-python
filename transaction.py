@@ -8,8 +8,10 @@ class Transaction:
         self.amount = amount
     
     def print_data(self):
+        print('\n-----TRANSACTION-----')
         print('Date:', self.date)
         print('Time:', self.time)
         print('Description:', self.description)
         print('Vendor:', self.vendor)
         print(f'Amount: ${self.amount:,.2f}')
+        print('-------------------------------')
