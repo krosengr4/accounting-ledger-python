@@ -12,4 +12,17 @@ def display_main_menu():
         """)
         
     return int(input('Enter option:\n'))
+
+def display_ledger_screen():
+    print('\n\t-----LEDGER SCREEN-----')
+    print("""
+            ---OPTIONS---
+          1 - Display all entries
+          2 - Display deposits
+          3 - Display payments
+        
+          0 - Go back
+        """)
+    
+    return int(input('Enter option:\n'))
     
