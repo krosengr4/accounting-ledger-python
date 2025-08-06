@@ -21,7 +21,7 @@ def process_home_screen():
                 if_continue = False
                 break
             case _:
-                print('Enter a number that is listed in the menu!!!')
+                print('Please enter a valid option!!!')
 
 
 
