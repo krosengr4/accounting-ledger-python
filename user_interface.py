@@ -25,4 +25,19 @@ def display_ledger_screen():
         """)
     
     return int(input('Enter option:\n'))
+
+def display_reports_screen():
+    print('\n\t-----REPORTS SCREEN-----')
+    print("""
+            ---OPTIONS---
+          1 - View all transactions this month
+          2 - View all transactions last month
+          3 - View all transactions this year
+          4 - View all transactions last year
+          5 - Search by vendor
+
+          0 - Go back
+          """)
+    
+    return int(input('Enter option:\n'))
     
