@@ -33,9 +33,21 @@ def add_deposit():
     amount = float(input('Enter the amount:\n'))
 
     new_transaction = Transaction(trans_date, trans_time, description, vendor, amount)
-    new_transaction.print_data()
     file_manager.write_to_file(new_transaction)
+    print('___________________________________________________')
+    new_transaction.print_data()
 
 
 def add_payment():
-    print('Add payment')
+    trans_date = datetime.now().date()
+    trans_time = datetime.now().time()
+    description = input('\nEnter the description:\n')
+    vendor = input('Enter the vendor:\n')
+    amount = float(input('Enter the amount:\n'))
+
+    amount = -amount
+
+    new_transaction = Transaction(trans_date, trans_time, description, vendor, amount)
+    file_manager.write_to_file(new_transaction)
+    print('___________________________________________________')
+    new_transaction.print_data()

@@ -13,7 +13,7 @@ def write_to_file(transaction):
         with open(file_path, 'a') as file:
             file.write('\n' + str(date) + '|' + str(time) + '|' + description + '|' + vendor + '|' + str(amount))
 
-        print("The transaction was logged to the file!!!")
+        print("\nThe transaction was logged to the file!!!")
     
     except FileNotFoundError as err:
         print("The file was not found! :( )")
