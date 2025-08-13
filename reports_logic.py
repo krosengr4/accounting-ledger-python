@@ -17,6 +17,8 @@ def process_reports_screen():
                 trans_this_year()
             case 4:
                 trans_last_year()
+            case 5:
+                search_by_vendor()
             case 0:
                 if_continue = False
             case _:
@@ -105,3 +107,6 @@ def trans_last_year():
             new_transaction.print_data()
 
     input('Please hit enter to continue...')
+
+def search_by_vendor():
+    print('Search by vendor')
