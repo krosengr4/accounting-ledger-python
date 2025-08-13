@@ -23,6 +23,7 @@ def process_reports_screen():
                 print("Please enter a valid option!!!")           
 
 def trans_this_month():
+    print('-----TRANSACTIONS THIS MONTH-----')
     transactions = file_manager.read_file()
 
     current_month = datetime.now().date().month
@@ -45,11 +46,14 @@ def trans_this_month():
             new_transaction = Transaction(date, time, description, vendor, amount)
             new_transaction.print_data()
 
+    input('\nPlease hit enter to continue...')
+
 
 def trans_last_month():
     print('Transactions last month')
 
 def trans_this_year():
+    print('-----TRANSACTIONS THIS YEAR-----')
     transactions = file_manager.read_file()
 
     current_year = datetime.now().year
@@ -71,6 +75,8 @@ def trans_this_year():
         if trans_year == current_year:
             new_transaction = Transaction(date, time, description, vendor, amount)
             new_transaction.print_data()
+
+    input('\nPlease hit enter to continue...')
 
 def trans_last_year():
     print('Transactions last year')
