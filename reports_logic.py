@@ -60,6 +60,36 @@ def trans_last_month():
 
     transactions = file_manager.read_file()
 
+    current_month = datetime.now().month
+    last_month = current_month - 1
+    current_year = datetime.now().year
+    last_year = current_year - 1
+
+    for line in transactions:
+        if 'DATE' in line:
+            continue
+
+        line_parts = line.split('|')
+        date = line_parts[0]
+        time = line_parts[1]
+        description = line_parts[2]
+        vendor = line_parts[3]
+        amount = float(line_parts[4])
+
+        date_parts = date.split('-')
+        trans_year = int(date_parts[0])
+        trans_month = int(date_parts[1])
+
+        if current_month != 1 and trans_month == last_month and trans_year == current_year:
+            new_transaction = Transaction(date, time, description, vendor, amount)
+            new_transaction.print_data()
+        elif current_month == 1 and trans_month == 12 and trans_year == last_year:
+            new_transaction = Transaction(date, time, description, vendor, amount)
+            new_transaction.print_data()
+
+    input('Press enter to continue')
+
+
 # Read and print all transactions from this year
 def trans_this_year():
     print('-----TRANSACTIONS THIS YEAR-----')
