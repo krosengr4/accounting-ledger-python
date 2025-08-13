@@ -1,3 +1,4 @@
+# User interface that shows each menu
 
 def display_main_menu():
     print('\n\t-----MAIN MENU------')

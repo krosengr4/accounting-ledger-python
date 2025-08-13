@@ -1,6 +1,7 @@
 import user_interface, file_manager
 from transaction import Transaction
 
+# Process user selection from ledger screen menu
 def process_ledger_screen():
     if_continue = True
 
@@ -19,7 +20,7 @@ def process_ledger_screen():
             case _:
                 print("Please enter a valid option!!!")
 
-
+# Read and display all transactions in file
 def display_all():
     transactions = file_manager.read_file()
     for line in transactions:
@@ -39,6 +40,7 @@ def display_all():
         
     input('Press enter to continue')
 
+# Read and display only deposit transactions(positive amount)
 def display_deposits():
     transactions = file_manager.read_file()
 
@@ -56,7 +58,7 @@ def display_deposits():
     input('\nPress enter to continue...')
 
 
-
+# Read and display all payment transactions(negative amount)
 def display_payments():
     transactions = file_manager.read_file()
 

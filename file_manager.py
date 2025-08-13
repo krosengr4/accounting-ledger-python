@@ -2,6 +2,7 @@ from transaction import Transaction
 
 file_path = 'resources/transactions.txt'
 
+# Write a transaction to the file
 def write_to_file(transaction):
     date = transaction.date
     time = transaction.time
@@ -18,6 +19,7 @@ def write_to_file(transaction):
     except FileNotFoundError as err:
         print("The file was not found! :( )")
 
+# Read all transactions from the file
 def read_file():
     try:
         with open(file_path) as file:

@@ -2,6 +2,7 @@ import user_interface, ledger_logic, reports_logic, file_manager
 from datetime import datetime
 from transaction import Transaction
 
+# Process user selection on home screen menu
 def process_home_screen():
     if_continue = True
 
@@ -23,7 +24,7 @@ def process_home_screen():
             case _:
                 print('Please enter a valid option!!!')
 
-
+# Create a deposit transaction from user input and write to file
 def add_deposit():
     trans_date = datetime.now().date()
     trans_time = datetime.now().time()
@@ -38,7 +39,7 @@ def add_deposit():
     
     input('Press enter to continue')
 
-
+# Create a payment transaction and write to file
 def add_payment():
     trans_date = datetime.now().date()
     trans_time = datetime.now().time()

@@ -2,6 +2,7 @@ import user_interface, file_manager
 from transaction import Transaction
 from datetime import datetime
 
+# Process user selection from the report screen menu
 def process_reports_screen():
     if_continue = True
 
@@ -24,6 +25,7 @@ def process_reports_screen():
             case _:
                 print("Please enter a valid option!!!")           
 
+# Read and print all transactions from this month and year
 def trans_this_month():
     print('-----TRANSACTIONS THIS MONTH-----')
     transactions = file_manager.read_file()
@@ -52,10 +54,13 @@ def trans_this_month():
 
     input('\nPlease hit enter to continue...')
 
-
+# Read and print all transactions from last month
 def trans_last_month():
-    print('Transactions last month')
+    print('-----TRANSACTIONS LAST MONTH-----')
 
+    transactions = file_manager.read_file()
+
+# Read and print all transactions from this year
 def trans_this_year():
     print('-----TRANSACTIONS THIS YEAR-----')
     transactions = file_manager.read_file()
@@ -82,6 +87,7 @@ def trans_this_year():
 
     input('\nPlease hit enter to continue...')
 
+# Read and print all transactions from last year
 def trans_last_year():
     print('-----TRANSACTIONS LAST YEAR-----')
     transactions = file_manager.read_file()
@@ -108,10 +114,12 @@ def trans_last_year():
 
     input('Please hit enter to continue...')
 
+# Read and print all transactions from a vendor user searches
 def search_by_vendor():
     transactions = file_manager.read_file()
 
     user_search = input('\nPlease enter the vendor to search for:\n').lower()
+    print('-----TRANSACTIONS FROM', user_search.upper() + '-----')
     
     for line in transactions:
         if 'DATE' in line:
