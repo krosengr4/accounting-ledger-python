@@ -109,4 +109,27 @@ def trans_last_year():
     input('Please hit enter to continue...')
 
 def search_by_vendor():
-    print('Search by vendor')
+    transactions = file_manager.read_file()
+
+    user_search = input('\nPlease enter the vendor to search for:\n').lower()
+    
+    for line in transactions:
+        if 'DATE' in line:
+            continue
+
+        line_parts = line.split('|')
+        date = line_parts[0]
+        time = line_parts[1]
+        description = line_parts[2]
+        vendor = line_parts[3]
+        amount = float(line_parts[4])
+
+        if user_search in vendor.lower():
+            new_transaction = Transaction(date, time, description, vendor, amount)
+            new_transaction.print_data()
+
+    input('Press enter to continue...')
+
+        
+
+
