@@ -1,5 +1,6 @@
 import user_interface, file_manager
 from transaction import Transaction
+from datetime import datetime
 
 def process_reports_screen():
     if_continue = True
@@ -22,7 +23,28 @@ def process_reports_screen():
                 print("Please enter a valid option!!!")           
 
 def trans_this_month():
-    print('Transactions this month')
+    transactions = file_manager.read_file()
+
+    current_month = datetime.now().date().month
+
+    for line in transactions:
+        if 'DATE' in line:
+            continue
+
+        line_parts = line.split('|')
+        date = line_parts[0]
+        time = line_parts[1]
+        description = line_parts[2]
+        vendor = line_parts[3]
+        amount = float(line_parts[4])
+
+        date_parts = date.split('-')
+        trans_month = int(date_parts[1])
+
+        if trans_month == current_month:
+            new_transaction = Transaction(date, time, description, vendor, amount)
+            new_transaction.print_data()
+
 
 def trans_last_month():
     print('Transactions last month')
