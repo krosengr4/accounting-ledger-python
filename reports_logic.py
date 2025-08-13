@@ -81,4 +81,27 @@ def trans_this_year():
     input('\nPlease hit enter to continue...')
 
 def trans_last_year():
-    print('Transactions last year')
+    print('-----TRANSACTIONS LAST YEAR-----')
+    transactions = file_manager.read_file()
+
+    last_year = datetime.now().year - 1
+
+    for line in transactions:
+        if 'DATE' in line:
+            continue
+
+        line_parts = line.split('|')
+        date = line_parts[0]
+        time = line_parts[1]
+        description = line_parts[2]
+        vendor = line_parts[3]
+        amount = float(line_parts[4])
+
+        date_parts = date.split('-')
+        trans_year = int(date_parts[0])
+
+        if trans_year == last_year:
+            new_transaction = Transaction(date, time, description, vendor, amount)
+            new_transaction.print_data()
+
+    input('Please hit enter to continue...')
