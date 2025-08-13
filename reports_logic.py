@@ -83,6 +83,7 @@ def trans_last_month():
         if current_month != 1 and trans_month == last_month and trans_year == current_year:
             new_transaction = Transaction(date, time, description, vendor, amount)
             new_transaction.print_data()
+        # If current month is 01, then we need transactions from december of last year
         elif current_month == 1 and trans_month == 12 and trans_year == last_year:
             new_transaction = Transaction(date, time, description, vendor, amount)
             new_transaction.print_data()
@@ -167,7 +168,3 @@ def search_by_vendor():
             new_transaction.print_data()
 
     input('Press enter to continue...')
-
-        
-
-
