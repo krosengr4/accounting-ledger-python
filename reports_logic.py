@@ -27,6 +27,7 @@ def trans_this_month():
     transactions = file_manager.read_file()
 
     current_month = datetime.now().date().month
+    current_year = datetime.now().year
 
     for line in transactions:
         if 'DATE' in line:
@@ -41,8 +42,9 @@ def trans_this_month():
 
         date_parts = date.split('-')
         trans_month = int(date_parts[1])
+        trans_year = int(date_parts[0])
 
-        if trans_month == current_month:
+        if trans_month == current_month and trans_year == current_year:
             new_transaction = Transaction(date, time, description, vendor, amount)
             new_transaction.print_data()
 
